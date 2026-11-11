@@ -130,6 +130,45 @@ body {
     display: flex;
     flex-direction: column;
     overflow: visible;
+    line-height: 1.17;
+}
+/* título e chapéu, iguais em quase todos os slides */
+.titulo {
+    left: 57.6px;
+    top: 63.36px;
+    width: 1161.6px;
+    height: 74.88px;
+    font-size: 48px;
+    color: var(--ink);
+}
+.chapeu {
+    left: 57.6px;
+    top: 34.56px;
+    width: 864px;
+    height: 28.8px;
+    font-size: 17.6px;
+    color: var(--red);
+}
+.fonte-corpo {
+    font-family: var(--fb);
+}
+.fonte-titulo {
+    font-family: var(--fh);
+}
+.fonte-mono {
+    font-family: var(--fm);
+}
+.negrito {
+    font-weight: 700;
+}
+.italico {
+    font-style: italic;
+}
+.espacado {
+    letter-spacing: 3.33px;
+}
+.vermelho {
+    color: var(--red);
 }
 h2.tx {
     font-family: var(--fh);
@@ -150,6 +189,13 @@ h2.tx {
 }
 .rc {
     position: absolute;
+}
+.rc.papel {
+    background: var(--kraft);
+    border: 1.33px solid var(--ink);
+}
+.rc.escuro {
+    background: var(--ink);
 }
 .dm {
     position: absolute;
