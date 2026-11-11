@@ -1,7 +1,774 @@
-<section class="slide " data-n="16" aria-roledescription="slide" aria-label="16 de 21: G1: regiões e lixo primeiro"><div class="fr1"></div><div class="fr2"></div><h2 class="tx" style="left:57.60px;top:63.36px;width:1161.60px;height:74.88px;font-size:48.00px;color:var(--ink);line-height:1.17">G1: regiões e lixo primeiro</h2><div class="tx" style="left:57.60px;top:34.56px;width:864.00px;height:28.80px;justify-content:flex-start;color:var(--red);font-size:17.60px;line-height:1.170"><p class="" style="font-size:17.60px;text-align:left;"><span style="font-family:var(--fh);font-weight:700;letter-spacing:3.33px">4 · JAVA</span></p></div><div class="tx" style="left:57.60px;top:155.52px;width:700.80px;height:336.00px;justify-content:flex-start;color:var(--ink);font-size:23.46px;line-height:1.205"><p class="bl" style="font-size:23.46px;text-align:left;margin-bottom:10.67px"><span style="font-family:var(--fb)">O heap é fatiado em regiões de mesmo tamanho: Eden, Survivor, Old e Humongous.</span></p><p class="bl" style="font-size:23.46px;text-align:left;margin-bottom:10.67px"><span style="font-family:var(--fb)">Young GC: pausa curta em que várias threads copiam os objetos vivos.</span></p><p class="bl" style="font-size:23.46px;text-align:left;margin-bottom:10.67px"><span style="font-family:var(--fb)">Marcação concorrente com SATB: a barreira de Yuasa em produção.</span></p><p class="bl" style="font-size:23.46px;text-align:left;margin-bottom:10.67px"><span style="font-family:var(--fb)">Mixed GC: entram as regiões Old com mais lixo, até caber no tempo-alvo de pausa (200 ms por padrão).</span></p><p class="bl" style="font-size:23.46px;text-align:left;"><span style="font-family:var(--fb)">Cada região guarda as próprias arestas de entrada: o remembered set.</span></p></div><div class="rc" style="left:57.60px;top:504.00px;width:700.80px;height:129.60px;background:var(--kraft);border:1.33px solid var(--ink)"></div><div class="tx" style="left:81.60px;top:519.36px;width:652.80px;height:30.72px;justify-content:flex-start;color:var(--red);font-size:23.46px;line-height:1.170"><p class="" style="font-size:23.46px;text-align:left;"><span style="font-family:var(--fh);font-weight:700">JDK 26 · JEP 522</span></p></div><div class="tx" style="left:81.60px;top:555.84px;width:652.80px;height:60.48px;justify-content:flex-start;color:var(--ink);font-size:21.26px;line-height:1.228"><p class="" style="font-size:21.26px;text-align:left;"><span style="font-family:var(--fb)">Duas card tables que se alternam: o programa marca uma enquanto o GC processa a outra, com menos sincronização.</span></p></div><figure class="im" style="left:792.00px;top:153.60px;width:432.00px;height:480.00px" role="img" aria-label="Grade de regiões do G1: Eden, Survivor, Old com porcentagem de objetos vivos, Humongous e livres"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 500" width="100%" height="100%"><defs>
-<pattern id="hx83" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="7" height="7" fill="#1C1813"/><line x1="0" y1="0" x2="0" y2="7" stroke="#F2E7D0" stroke-width="2.4"/></pattern>
-<pattern id="hkx83" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(-35)"><rect width="8" height="8" fill="#F2E7D0"/><line x1="0" y1="0" x2="0" y2="8" stroke="#1C1813" stroke-width="1.6"/></pattern>
-<marker id="apx83" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M1 1L9 5L1 9z" fill="#F2E7D0"/></marker>
-<marker id="arx83" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M1 1L9 5L1 9z" fill="#A8321F"/></marker>
-<marker id="aox83" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M1 1L9 5L1 9z" fill="#C08A2E"/></marker>
-</defs><rect width="450" height="500" fill="#1C1813"/><path d="M0 129l38 -0.9M360 200l29 0.7M359 212l30 -0.7M176 5l17 -0.2M384 446l30 0.8M193 333l23 1.3M70 62l39 1.1M115 169l35 -0.3M200 253l26 -1.3M174 372l52 -0.4M295 488l46 -0.3M259 216l20 0.4M285 312l50 -0.2M262 445l39 -0.6M196 64l30 -1.4M423 262l49 -1.5M203 151l48 0.1M423 277l12 0.2M64 1l29 1.1M69 405l23 -0.5M12 271l47 1.1M323 14l26 -1.1M422 37l10 0.1M323 270l34 -1.1M361 308l19 -0.9M147 139l23 0.6M374 156l12 1.0M448 412l46 0.9M149 163l30 0.5M240 340l50 -1.1M250 426l24 -1.3M53 170l45 1.0M443 417l49 0.4M197 18l43 1.4M436 57l13 -1.2M204 414l32 -0.9M29 208l29 0.1M111 334l46 -0.0M279 86l10 1.5M314 273l13 -1.0M337 133l15 0.2M131 297l30 -0.1M409 298l18 0.7M311 408l19 -0.4M160 336l47 0.9M245 233l47 -1.3M266 484l46 -0.2M7 430l39 0.6M291 419l39 0.4M161 199l52 0.5M415 228l31 0.6M336 280l24 0.5M449 14l49 0.5M20 325l46 -1.5M398 479l10 -0.9M351 449l42 0.2M341 359l29 -1.1M67 165l28 -0.8M44 73l19 0.8M1 369l37 0.6M115 4l19 0.2M161 268l49 1.0M61 248l11 -1.2M319 185l9 -0.1M76 473l45 -1.4M106 65l53 -0.1M281 15l45 0.8M181 52l29 1.2M100 114l21 1.3M52 464l8 0.7M225 156l20 -1.3M140 44l46 -0.9M323 259l12 -0.6M270 416l12 0.9M203 314l42 -0.9M344 171l39 -0.1M246 197l23 1.4M81 311l29 -1.4M114 103l19 0.1M267 378l22 0.9M152 296l41 0.5M314 156l10 -0.8M44 489l9 1.3M266 418l17 1.5M179 39l49 -0.1M417 222l36 0.1M274 296l28 -1.3" stroke="#F2E7D0" stroke-width="1.2" opacity="0.09" stroke-linecap="round"/><rect x="33" y="40" width="58" height="48" rx="3" fill="#F2E7D0" stroke="#1C1813" stroke-width="1.5"/><text x="62" y="65" font-family="'TeX Gyre Bonum','Bookman Old Style',serif" font-size="19" font-weight="bold" fill="#1C1813" text-anchor="middle" dominant-baseline="central">E</text><rect x="97" y="40" width="58" height="48" rx="3" fill="#F2E7D0" stroke="#1C1813" stroke-width="1.5"/><text x="126" y="65" font-family="'TeX Gyre Bonum','Bookman Old Style',serif" font-size="19" font-weight="bold" fill="#1C1813" text-anchor="middle" dominant-baseline="central">E</text><rect x="161" y="40" width="58" height="48" rx="3" fill="url(#hx83)" stroke="#F2E7D0" stroke-width="2"/><text x="190" y="65" font-family="'TeX Gyre Bonum','Bookman Old Style',serif" font-size="15" font-weight="bold" fill="#F2E7D0" text-anchor="middle" dominant-baseline="central" stroke="#1C1813" stroke-width="5" paint-order="stroke" stroke-linejoin="round">40%</text><rect x="225" y="40" width="58" height="48" rx="3" fill="#1C1813" stroke="#F2E7D0" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.6"/><rect x="289" y="40" width="58" height="48" rx="3" fill="url(#hx83)" stroke="#F2E7D0" stroke-width="2"/><text x="318" y="65" font-family="'TeX Gyre Bonum','Bookman Old Style',serif" font-size="15" font-weight="bold" fill="#F2E7D0" text-anchor="middle" dominant-baseline="central" stroke="#1C1813" stroke-width="5" paint-order="stroke" stroke-linejoin="round">85%</text><rect x="353" y="40" width="58" height="48" rx="3" fill="#C08A2E" stroke="#1C1813" stroke-width="1.5"/><text x="382" y="65" font-family="'TeX Gyre Bonum','Bookman Old Style',serif" font-size="19" font-weight="bold" fill="#1C1813" text-anchor="middle" dominant-baseline="central">S</text><rect x="33" y="94" width="58" height="48" rx="3" fill="url(#hx83)" stroke="#F2E7D0" stroke-width="2"/><text x="62" y="119" font-family="'TeX Gyre Bonum','Bookman Old Style',serif" font-size="15" font-weight="bold" fill="#F2E7D0" text-anchor="middle" dominant-baseline="central" stroke="#1C1813" stroke-width="5" paint-order="stroke" stroke-linejoin="round">15%</text><rect x="97" y="94" width="58" height="48" rx="3" fill="#A8321F" stroke="#1C1813" stroke-width="1.5"/><text x="126" y="119" font-family="'TeX Gyre Bonum','Bookman Old Style',serif" font-size="19" font-weight="bold" fill="#F2E7D0" text-anchor="middle" dominant-baseline="central">H</text><rect x="161" y="94" width="58" height="48" rx="3" fill="#A8321F" stroke="#1C1813" stroke-width="1.5"/><text x="190" y="119" font-family="'TeX Gyre Bonum','Bookman Old Style',serif" font-size="19" font-weight="bold" fill="#F2E7D0" text-anchor="middle" dominant-baseline="central">H</text><rect x="225" y="94" width="58" height="48" rx="3" fill="#1C1813" stroke="#F2E7D0" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.6"/><rect x="289" y="94" width="58" height="48" rx="3" fill="#F2E7D0" stroke="#1C1813" stroke-width="1.5"/><text x="318" y="119" font-family="'TeX Gyre Bonum','Bookman Old Style',serif" font-size="19" font-weight="bold" fill="#1C1813" text-anchor="middle" dominant-baseline="central">E</text><rect x="353" y="94" width="58" height="48" rx="3" fill="url(#hx83)" stroke="#F2E7D0" stroke-width="2"/><text x="382" y="119" font-family="'TeX Gyre Bonum','Bookman Old Style',serif" font-size="15" font-weight="bold" fill="#F2E7D0" text-anchor="middle" dominant-baseline="central" stroke="#1C1813" stroke-width="5" paint-order="stroke" stroke-linejoin="round">70%</text><rect x="33" y="148" width="58" height="48" rx="3" fill="#1C1813" stroke="#F2E7D0" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.6"/><rect x="97" y="148" width="58" height="48" rx="3" fill="#F2E7D0" stroke="#1C1813" stroke-width="1.5"/><text x="126" y="173" font-family="'TeX Gyre Bonum','Bookman Old Style',serif" font-size="19" font-weight="bold" fill="#1C1813" text-anchor="middle" dominant-baseline="central">E</text><rect x="161" y="148" width="58" height="48" rx="3" fill="url(#hx83)" stroke="#F2E7D0" stroke-width="2"/><text x="190" y="173" font-family="'TeX Gyre Bonum','Bookman Old Style',serif" font-size="15" font-weight="bold" fill="#F2E7D0" text-anchor="middle" dominant-baseline="central" stroke="#1C1813" stroke-width="5" paint-order="stroke" stroke-linejoin="round">22%</text><rect x="225" y="148" width="58" height="48" rx="3" fill="url(#hx83)" stroke="#F2E7D0" stroke-width="2"/><text x="254" y="173" font-family="'TeX Gyre Bonum','Bookman Old Style',serif" font-size="15" font-weight="bold" fill="#F2E7D0" text-anchor="middle" dominant-baseline="central" stroke="#1C1813" stroke-width="5" paint-order="stroke" stroke-linejoin="round">93%</text><rect x="289" y="148" width="58" height="48" rx="3" fill="#1C1813" stroke="#F2E7D0" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.6"/><rect x="353" y="148" width="58" height="48" rx="3" fill="#F2E7D0" stroke="#1C1813" stroke-width="1.5"/><text x="382" y="173" font-family="'TeX Gyre Bonum','Bookman Old Style',serif" font-size="19" font-weight="bold" fill="#1C1813" text-anchor="middle" dominant-baseline="central">E</text><rect x="33" y="202" width="58" height="48" rx="3" fill="#C08A2E" stroke="#1C1813" stroke-width="1.5"/><text x="62" y="227" font-family="'TeX Gyre Bonum','Bookman Old Style',serif" font-size="19" font-weight="bold" fill="#1C1813" text-anchor="middle" dominant-baseline="central">S</text><rect x="97" y="202" width="58" height="48" rx="3" fill="url(#hx83)" stroke="#F2E7D0" stroke-width="2"/><text x="126" y="227" font-family="'TeX Gyre Bonum','Bookman Old Style',serif" font-size="15" font-weight="bold" fill="#F2E7D0" text-anchor="middle" dominant-baseline="central" stroke="#1C1813" stroke-width="5" paint-order="stroke" stroke-linejoin="round">35%</text><rect x="161" y="202" width="58" height="48" rx="3" fill="#1C1813" stroke="#F2E7D0" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.6"/><rect x="225" y="202" width="58" height="48" rx="3" fill="#F2E7D0" stroke="#1C1813" stroke-width="1.5"/><text x="254" y="227" font-family="'TeX Gyre Bonum','Bookman Old Style',serif" font-size="19" font-weight="bold" fill="#1C1813" text-anchor="middle" dominant-baseline="central">E</text><rect x="289" y="202" width="58" height="48" rx="3" fill="url(#hx83)" stroke="#F2E7D0" stroke-width="2"/><text x="318" y="227" font-family="'TeX Gyre Bonum','Bookman Old Style',serif" font-size="15" font-weight="bold" fill="#F2E7D0" text-anchor="middle" dominant-baseline="central" stroke="#1C1813" stroke-width="5" paint-order="stroke" stroke-linejoin="round">60%</text><rect x="353" y="202" width="58" height="48" rx="3" fill="#1C1813" stroke="#F2E7D0" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.6"/><rect x="33" y="256" width="58" height="48" rx="3" fill="url(#hx83)" stroke="#F2E7D0" stroke-width="2"/><text x="62" y="281" font-family="'TeX Gyre Bonum','Bookman Old Style',serif" font-size="15" font-weight="bold" fill="#F2E7D0" text-anchor="middle" dominant-baseline="central" stroke="#1C1813" stroke-width="5" paint-order="stroke" stroke-linejoin="round">50%</text><rect x="97" y="256" width="58" height="48" rx="3" fill="#1C1813" stroke="#F2E7D0" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.6"/><rect x="161" y="256" width="58" height="48" rx="3" fill="#F2E7D0" stroke="#1C1813" stroke-width="1.5"/><text x="190" y="281" font-family="'TeX Gyre Bonum','Bookman Old Style',serif" font-size="19" font-weight="bold" fill="#1C1813" text-anchor="middle" dominant-baseline="central">E</text><rect x="225" y="256" width="58" height="48" rx="3" fill="#F2E7D0" stroke="#1C1813" stroke-width="1.5"/><text x="254" y="281" font-family="'TeX Gyre Bonum','Bookman Old Style',serif" font-size="19" font-weight="bold" fill="#1C1813" text-anchor="middle" dominant-baseline="central">E</text><rect x="289" y="256" width="58" height="48" rx="3" fill="#C08A2E" stroke="#1C1813" stroke-width="1.5"/><text x="318" y="281" font-family="'TeX Gyre Bonum','Bookman Old Style',serif" font-size="19" font-weight="bold" fill="#1C1813" text-anchor="middle" dominant-baseline="central">S</text><rect x="353" y="256" width="58" height="48" rx="3" fill="url(#hx83)" stroke="#F2E7D0" stroke-width="2"/><text x="382" y="281" font-family="'TeX Gyre Bonum','Bookman Old Style',serif" font-size="15" font-weight="bold" fill="#F2E7D0" text-anchor="middle" dominant-baseline="central" stroke="#1C1813" stroke-width="5" paint-order="stroke" stroke-linejoin="round">30%</text><rect x="33" y="310" width="58" height="48" rx="3" fill="#F2E7D0" stroke="#1C1813" stroke-width="1.5"/><text x="62" y="335" font-family="'TeX Gyre Bonum','Bookman Old Style',serif" font-size="19" font-weight="bold" fill="#1C1813" text-anchor="middle" dominant-baseline="central">E</text><rect x="97" y="310" width="58" height="48" rx="3" fill="url(#hx83)" stroke="#F2E7D0" stroke-width="2"/><text x="126" y="335" font-family="'TeX Gyre Bonum','Bookman Old Style',serif" font-size="15" font-weight="bold" fill="#F2E7D0" text-anchor="middle" dominant-baseline="central" stroke="#1C1813" stroke-width="5" paint-order="stroke" stroke-linejoin="round">45%</text><rect x="161" y="310" width="58" height="48" rx="3" fill="#1C1813" stroke="#F2E7D0" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.6"/><rect x="225" y="310" width="58" height="48" rx="3" fill="url(#hx83)" stroke="#F2E7D0" stroke-width="2"/><text x="254" y="335" font-family="'TeX Gyre Bonum','Bookman Old Style',serif" font-size="15" font-weight="bold" fill="#F2E7D0" text-anchor="middle" dominant-baseline="central" stroke="#1C1813" stroke-width="5" paint-order="stroke" stroke-linejoin="round">77%</text><rect x="289" y="310" width="58" height="48" rx="3" fill="#1C1813" stroke="#F2E7D0" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.6"/><rect x="353" y="310" width="58" height="48" rx="3" fill="#F2E7D0" stroke="#1C1813" stroke-width="1.5"/><text x="382" y="335" font-family="'TeX Gyre Bonum','Bookman Old Style',serif" font-size="19" font-weight="bold" fill="#1C1813" text-anchor="middle" dominant-baseline="central">E</text><rect x="40" y="382" width="26" height="26" rx="3" fill="#F2E7D0" stroke="#1C1813" stroke-width="1.5"/><text x="74" y="395" font-family="'TeX Gyre Schola','Century Schoolbook',serif" font-size="15" font-weight="normal" fill="#F2E7D0" text-anchor="start" dominant-baseline="central">Eden</text><rect x="170" y="382" width="26" height="26" rx="3" fill="#C08A2E" stroke="#1C1813" stroke-width="1.5"/><text x="204" y="395" font-family="'TeX Gyre Schola','Century Schoolbook',serif" font-size="15" font-weight="normal" fill="#F2E7D0" text-anchor="start" dominant-baseline="central">Survivor</text><rect x="300" y="382" width="26" height="26" rx="3" fill="#A8321F" stroke="#1C1813" stroke-width="1.5"/><text x="334" y="395" font-family="'TeX Gyre Schola','Century Schoolbook',serif" font-size="15" font-weight="normal" fill="#F2E7D0" text-anchor="start" dominant-baseline="central">Humongous</text><rect x="40" y="425" width="26" height="26" rx="3" fill="url(#hx83)" stroke="#F2E7D0" stroke-width="2"/><text x="74" y="438" font-family="'TeX Gyre Schola','Century Schoolbook',serif" font-size="15" font-weight="normal" fill="#F2E7D0" text-anchor="start" dominant-baseline="central">Old (% vivo)</text><rect x="200" y="425" width="26" height="26" rx="3" fill="#1C1813" stroke="#F2E7D0" stroke-width="1.5" stroke-dasharray="4 4"/><text x="234" y="438" font-family="'TeX Gyre Schola','Century Schoolbook',serif" font-size="15" font-weight="normal" fill="#F2E7D0" text-anchor="start" dominant-baseline="central">livre</text><rect x="0" y="0" width="450" height="500" fill="none" stroke="#1C1813" stroke-width="38"/><rect x="11" y="11" width="428" height="478" fill="none" stroke="#F2E7D0" stroke-width="3.5"/><rect x="19" y="19" width="412" height="462" fill="none" stroke="#F2E7D0" stroke-width="1.2"/></svg></figure><div class="ft">Coleta de lixo sob a ótica dos grafos</div><div class="pg">16</div><aside class="notes">Garbage-First: o heap vira um conjunto de regiões. A marcação concorrente mede quanto há de vivo em cada região Old, e as coletas mistas escolhem as regiões com mais lixo dentro do orçamento de pausa. Cada região guarda as arestas que entram nela, então qualquer conjunto de regiões pode ser coletado isoladamente. No JDK 26, a JEP 522 introduziu duas card tables alternadas.</aside></section>
+<section class="slide" data-n="16" aria-roledescription="slide" aria-label="16 de 21: G1: regiões e lixo primeiro">
+    <div class="fr1"></div>
+    <div class="fr2"></div>
+    <h2
+        class="tx"
+        style="
+            left: 57.6px;
+            top: 63.36px;
+            width: 1161.6px;
+            height: 74.88px;
+            font-size: 48px;
+            color: var(--ink);
+            line-height: 1.17;
+        "
+    >
+        G1: regiões e lixo primeiro
+    </h2>
+    <div
+        class="tx"
+        style="
+            left: 57.6px;
+            top: 34.56px;
+            width: 864px;
+            height: 28.8px;
+            justify-content: flex-start;
+            color: var(--red);
+            font-size: 17.6px;
+            line-height: 1.17;
+        "
+    >
+        <p class="" style="font-size: 17.6px; text-align: left">
+            <span style="font-family: var(--fh); font-weight: 700; letter-spacing: 3.33px">4 · JAVA</span>
+        </p>
+    </div>
+    <div
+        class="tx"
+        style="
+            left: 57.6px;
+            top: 155.52px;
+            width: 700.8px;
+            height: 336px;
+            justify-content: flex-start;
+            color: var(--ink);
+            font-size: 23.46px;
+            line-height: 1.205;
+        "
+    >
+        <p class="bl" style="font-size: 23.46px; text-align: left; margin-bottom: 10.67px">
+            <span style="font-family: var(--fb)"
+                >O heap é fatiado em regiões de mesmo tamanho: Eden, Survivor, Old e Humongous.</span
+            >
+        </p>
+        <p class="bl" style="font-size: 23.46px; text-align: left; margin-bottom: 10.67px">
+            <span style="font-family: var(--fb)"
+                >Young GC: pausa curta em que várias threads copiam os objetos vivos.</span
+            >
+        </p>
+        <p class="bl" style="font-size: 23.46px; text-align: left; margin-bottom: 10.67px">
+            <span style="font-family: var(--fb)">Marcação concorrente com SATB: a barreira de Yuasa em produção.</span>
+        </p>
+        <p class="bl" style="font-size: 23.46px; text-align: left; margin-bottom: 10.67px">
+            <span style="font-family: var(--fb)"
+                >Mixed GC: entram as regiões Old com mais lixo, até caber no tempo-alvo de pausa (200 ms por
+                padrão).</span
+            >
+        </p>
+        <p class="bl" style="font-size: 23.46px; text-align: left">
+            <span style="font-family: var(--fb)"
+                >Cada região guarda as próprias arestas de entrada: o remembered set.</span
+            >
+        </p>
+    </div>
+    <div
+        class="rc"
+        style="
+            left: 57.6px;
+            top: 504px;
+            width: 700.8px;
+            height: 129.6px;
+            background: var(--kraft);
+            border: 1.33px solid var(--ink);
+        "
+    ></div>
+    <div
+        class="tx"
+        style="
+            left: 81.6px;
+            top: 519.36px;
+            width: 652.8px;
+            height: 30.72px;
+            justify-content: flex-start;
+            color: var(--red);
+            font-size: 23.46px;
+            line-height: 1.17;
+        "
+    >
+        <p class="" style="font-size: 23.46px; text-align: left">
+            <span style="font-family: var(--fh); font-weight: 700">JDK 26 · JEP 522</span>
+        </p>
+    </div>
+    <div
+        class="tx"
+        style="
+            left: 81.6px;
+            top: 555.84px;
+            width: 652.8px;
+            height: 60.48px;
+            justify-content: flex-start;
+            color: var(--ink);
+            font-size: 21.26px;
+            line-height: 1.228;
+        "
+    >
+        <p class="" style="font-size: 21.26px; text-align: left">
+            <span style="font-family: var(--fb)"
+                >Duas card tables que se alternam: o programa marca uma enquanto o GC processa a outra, com menos
+                sincronização.</span
+            >
+        </p>
+    </div>
+    <figure
+        class="im"
+        style="left: 792px; top: 153.6px; width: 432px; height: 480px"
+        role="img"
+        aria-label="Grade de regiões do G1: Eden, Survivor, Old com porcentagem de objetos vivos, Humongous e livres"
+    >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 500" width="100%" height="100%">
+            <defs>
+                <pattern id="hx83" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                    <rect width="7" height="7" fill="#1C1813" />
+                    <line x1="0" y1="0" x2="0" y2="7" stroke="#F2E7D0" stroke-width="2.4" />
+                </pattern>
+                <pattern id="hkx83" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(-35)">
+                    <rect width="8" height="8" fill="#F2E7D0" />
+                    <line x1="0" y1="0" x2="0" y2="8" stroke="#1C1813" stroke-width="1.6" />
+                </pattern>
+                <marker
+                    id="apx83"
+                    viewBox="0 0 10 10"
+                    refX="8"
+                    refY="5"
+                    markerWidth="4.2"
+                    markerHeight="4.2"
+                    orient="auto-start-reverse"
+                >
+                    <path d="M1 1L9 5L1 9z" fill="#F2E7D0" />
+                </marker>
+                <marker
+                    id="arx83"
+                    viewBox="0 0 10 10"
+                    refX="8"
+                    refY="5"
+                    markerWidth="4.2"
+                    markerHeight="4.2"
+                    orient="auto-start-reverse"
+                >
+                    <path d="M1 1L9 5L1 9z" fill="#A8321F" />
+                </marker>
+                <marker
+                    id="aox83"
+                    viewBox="0 0 10 10"
+                    refX="8"
+                    refY="5"
+                    markerWidth="4.2"
+                    markerHeight="4.2"
+                    orient="auto-start-reverse"
+                >
+                    <path d="M1 1L9 5L1 9z" fill="#C08A2E" />
+                </marker>
+            </defs>
+            <rect width="450" height="500" fill="#1C1813" />
+            <path
+                d="M0 129l38 -0.9M360 200l29 0.7M359 212l30 -0.7M176 5l17 -0.2M384 446l30 0.8M193 333l23 1.3M70 62l39 1.1M115 169l35 -0.3M200 253l26 -1.3M174 372l52 -0.4M295 488l46 -0.3M259 216l20 0.4M285 312l50 -0.2M262 445l39 -0.6M196 64l30 -1.4M423 262l49 -1.5M203 151l48 0.1M423 277l12 0.2M64 1l29 1.1M69 405l23 -0.5M12 271l47 1.1M323 14l26 -1.1M422 37l10 0.1M323 270l34 -1.1M361 308l19 -0.9M147 139l23 0.6M374 156l12 1.0M448 412l46 0.9M149 163l30 0.5M240 340l50 -1.1M250 426l24 -1.3M53 170l45 1.0M443 417l49 0.4M197 18l43 1.4M436 57l13 -1.2M204 414l32 -0.9M29 208l29 0.1M111 334l46 -0.0M279 86l10 1.5M314 273l13 -1.0M337 133l15 0.2M131 297l30 -0.1M409 298l18 0.7M311 408l19 -0.4M160 336l47 0.9M245 233l47 -1.3M266 484l46 -0.2M7 430l39 0.6M291 419l39 0.4M161 199l52 0.5M415 228l31 0.6M336 280l24 0.5M449 14l49 0.5M20 325l46 -1.5M398 479l10 -0.9M351 449l42 0.2M341 359l29 -1.1M67 165l28 -0.8M44 73l19 0.8M1 369l37 0.6M115 4l19 0.2M161 268l49 1.0M61 248l11 -1.2M319 185l9 -0.1M76 473l45 -1.4M106 65l53 -0.1M281 15l45 0.8M181 52l29 1.2M100 114l21 1.3M52 464l8 0.7M225 156l20 -1.3M140 44l46 -0.9M323 259l12 -0.6M270 416l12 0.9M203 314l42 -0.9M344 171l39 -0.1M246 197l23 1.4M81 311l29 -1.4M114 103l19 0.1M267 378l22 0.9M152 296l41 0.5M314 156l10 -0.8M44 489l9 1.3M266 418l17 1.5M179 39l49 -0.1M417 222l36 0.1M274 296l28 -1.3"
+                stroke="#F2E7D0"
+                stroke-width="1.2"
+                opacity="0.09"
+                stroke-linecap="round"
+            />
+            <rect x="33" y="40" width="58" height="48" rx="3" fill="#F2E7D0" stroke="#1C1813" stroke-width="1.5" />
+            <text
+                x="62"
+                y="65"
+                font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
+                font-size="19"
+                font-weight="bold"
+                fill="#1C1813"
+                text-anchor="middle"
+                dominant-baseline="central"
+            >
+                E
+            </text>
+            <rect x="97" y="40" width="58" height="48" rx="3" fill="#F2E7D0" stroke="#1C1813" stroke-width="1.5" />
+            <text
+                x="126"
+                y="65"
+                font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
+                font-size="19"
+                font-weight="bold"
+                fill="#1C1813"
+                text-anchor="middle"
+                dominant-baseline="central"
+            >
+                E
+            </text>
+            <rect x="161" y="40" width="58" height="48" rx="3" fill="url(#hx83)" stroke="#F2E7D0" stroke-width="2" />
+            <text
+                x="190"
+                y="65"
+                font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
+                font-size="15"
+                font-weight="bold"
+                fill="#F2E7D0"
+                text-anchor="middle"
+                dominant-baseline="central"
+                stroke="#1C1813"
+                stroke-width="5"
+                paint-order="stroke"
+                stroke-linejoin="round"
+            >
+                40%
+            </text>
+            <rect
+                x="225"
+                y="40"
+                width="58"
+                height="48"
+                rx="3"
+                fill="#1C1813"
+                stroke="#F2E7D0"
+                stroke-width="1.5"
+                stroke-dasharray="4 4"
+                opacity="0.6"
+            />
+            <rect x="289" y="40" width="58" height="48" rx="3" fill="url(#hx83)" stroke="#F2E7D0" stroke-width="2" />
+            <text
+                x="318"
+                y="65"
+                font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
+                font-size="15"
+                font-weight="bold"
+                fill="#F2E7D0"
+                text-anchor="middle"
+                dominant-baseline="central"
+                stroke="#1C1813"
+                stroke-width="5"
+                paint-order="stroke"
+                stroke-linejoin="round"
+            >
+                85%
+            </text>
+            <rect x="353" y="40" width="58" height="48" rx="3" fill="#C08A2E" stroke="#1C1813" stroke-width="1.5" />
+            <text
+                x="382"
+                y="65"
+                font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
+                font-size="19"
+                font-weight="bold"
+                fill="#1C1813"
+                text-anchor="middle"
+                dominant-baseline="central"
+            >
+                S
+            </text>
+            <rect x="33" y="94" width="58" height="48" rx="3" fill="url(#hx83)" stroke="#F2E7D0" stroke-width="2" />
+            <text
+                x="62"
+                y="119"
+                font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
+                font-size="15"
+                font-weight="bold"
+                fill="#F2E7D0"
+                text-anchor="middle"
+                dominant-baseline="central"
+                stroke="#1C1813"
+                stroke-width="5"
+                paint-order="stroke"
+                stroke-linejoin="round"
+            >
+                15%
+            </text>
+            <rect x="97" y="94" width="58" height="48" rx="3" fill="#A8321F" stroke="#1C1813" stroke-width="1.5" />
+            <text
+                x="126"
+                y="119"
+                font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
+                font-size="19"
+                font-weight="bold"
+                fill="#F2E7D0"
+                text-anchor="middle"
+                dominant-baseline="central"
+            >
+                H
+            </text>
+            <rect x="161" y="94" width="58" height="48" rx="3" fill="#A8321F" stroke="#1C1813" stroke-width="1.5" />
+            <text
+                x="190"
+                y="119"
+                font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
+                font-size="19"
+                font-weight="bold"
+                fill="#F2E7D0"
+                text-anchor="middle"
+                dominant-baseline="central"
+            >
+                H
+            </text>
+            <rect
+                x="225"
+                y="94"
+                width="58"
+                height="48"
+                rx="3"
+                fill="#1C1813"
+                stroke="#F2E7D0"
+                stroke-width="1.5"
+                stroke-dasharray="4 4"
+                opacity="0.6"
+            />
+            <rect x="289" y="94" width="58" height="48" rx="3" fill="#F2E7D0" stroke="#1C1813" stroke-width="1.5" />
+            <text
+                x="318"
+                y="119"
+                font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
+                font-size="19"
+                font-weight="bold"
+                fill="#1C1813"
+                text-anchor="middle"
+                dominant-baseline="central"
+            >
+                E
+            </text>
+            <rect x="353" y="94" width="58" height="48" rx="3" fill="url(#hx83)" stroke="#F2E7D0" stroke-width="2" />
+            <text
+                x="382"
+                y="119"
+                font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
+                font-size="15"
+                font-weight="bold"
+                fill="#F2E7D0"
+                text-anchor="middle"
+                dominant-baseline="central"
+                stroke="#1C1813"
+                stroke-width="5"
+                paint-order="stroke"
+                stroke-linejoin="round"
+            >
+                70%
+            </text>
+            <rect
+                x="33"
+                y="148"
+                width="58"
+                height="48"
+                rx="3"
+                fill="#1C1813"
+                stroke="#F2E7D0"
+                stroke-width="1.5"
+                stroke-dasharray="4 4"
+                opacity="0.6"
+            />
+            <rect x="97" y="148" width="58" height="48" rx="3" fill="#F2E7D0" stroke="#1C1813" stroke-width="1.5" />
+            <text
+                x="126"
+                y="173"
+                font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
+                font-size="19"
+                font-weight="bold"
+                fill="#1C1813"
+                text-anchor="middle"
+                dominant-baseline="central"
+            >
+                E
+            </text>
+            <rect x="161" y="148" width="58" height="48" rx="3" fill="url(#hx83)" stroke="#F2E7D0" stroke-width="2" />
+            <text
+                x="190"
+                y="173"
+                font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
+                font-size="15"
+                font-weight="bold"
+                fill="#F2E7D0"
+                text-anchor="middle"
+                dominant-baseline="central"
+                stroke="#1C1813"
+                stroke-width="5"
+                paint-order="stroke"
+                stroke-linejoin="round"
+            >
+                22%
+            </text>
+            <rect x="225" y="148" width="58" height="48" rx="3" fill="url(#hx83)" stroke="#F2E7D0" stroke-width="2" />
+            <text
+                x="254"
+                y="173"
+                font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
+                font-size="15"
+                font-weight="bold"
+                fill="#F2E7D0"
+                text-anchor="middle"
+                dominant-baseline="central"
+                stroke="#1C1813"
+                stroke-width="5"
+                paint-order="stroke"
+                stroke-linejoin="round"
+            >
+                93%
+            </text>
+            <rect
+                x="289"
+                y="148"
+                width="58"
+                height="48"
+                rx="3"
+                fill="#1C1813"
+                stroke="#F2E7D0"
+                stroke-width="1.5"
+                stroke-dasharray="4 4"
+                opacity="0.6"
+            />
+            <rect x="353" y="148" width="58" height="48" rx="3" fill="#F2E7D0" stroke="#1C1813" stroke-width="1.5" />
+            <text
+                x="382"
+                y="173"
+                font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
+                font-size="19"
+                font-weight="bold"
+                fill="#1C1813"
+                text-anchor="middle"
+                dominant-baseline="central"
+            >
+                E
+            </text>
+            <rect x="33" y="202" width="58" height="48" rx="3" fill="#C08A2E" stroke="#1C1813" stroke-width="1.5" />
+            <text
+                x="62"
+                y="227"
+                font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
+                font-size="19"
+                font-weight="bold"
+                fill="#1C1813"
+                text-anchor="middle"
+                dominant-baseline="central"
+            >
+                S
+            </text>
+            <rect x="97" y="202" width="58" height="48" rx="3" fill="url(#hx83)" stroke="#F2E7D0" stroke-width="2" />
+            <text
+                x="126"
+                y="227"
+                font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
+                font-size="15"
+                font-weight="bold"
+                fill="#F2E7D0"
+                text-anchor="middle"
+                dominant-baseline="central"
+                stroke="#1C1813"
+                stroke-width="5"
+                paint-order="stroke"
+                stroke-linejoin="round"
+            >
+                35%
+            </text>
+            <rect
+                x="161"
+                y="202"
+                width="58"
+                height="48"
+                rx="3"
+                fill="#1C1813"
+                stroke="#F2E7D0"
+                stroke-width="1.5"
+                stroke-dasharray="4 4"
+                opacity="0.6"
+            />
+            <rect x="225" y="202" width="58" height="48" rx="3" fill="#F2E7D0" stroke="#1C1813" stroke-width="1.5" />
+            <text
+                x="254"
+                y="227"
+                font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
+                font-size="19"
+                font-weight="bold"
+                fill="#1C1813"
+                text-anchor="middle"
+                dominant-baseline="central"
+            >
+                E
+            </text>
+            <rect x="289" y="202" width="58" height="48" rx="3" fill="url(#hx83)" stroke="#F2E7D0" stroke-width="2" />
+            <text
+                x="318"
+                y="227"
+                font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
+                font-size="15"
+                font-weight="bold"
+                fill="#F2E7D0"
+                text-anchor="middle"
+                dominant-baseline="central"
+                stroke="#1C1813"
+                stroke-width="5"
+                paint-order="stroke"
+                stroke-linejoin="round"
+            >
+                60%
+            </text>
+            <rect
+                x="353"
+                y="202"
+                width="58"
+                height="48"
+                rx="3"
+                fill="#1C1813"
+                stroke="#F2E7D0"
+                stroke-width="1.5"
+                stroke-dasharray="4 4"
+                opacity="0.6"
+            />
+            <rect x="33" y="256" width="58" height="48" rx="3" fill="url(#hx83)" stroke="#F2E7D0" stroke-width="2" />
+            <text
+                x="62"
+                y="281"
+                font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
+                font-size="15"
+                font-weight="bold"
+                fill="#F2E7D0"
+                text-anchor="middle"
+                dominant-baseline="central"
+                stroke="#1C1813"
+                stroke-width="5"
+                paint-order="stroke"
+                stroke-linejoin="round"
+            >
+                50%
+            </text>
+            <rect
+                x="97"
+                y="256"
+                width="58"
+                height="48"
+                rx="3"
+                fill="#1C1813"
+                stroke="#F2E7D0"
+                stroke-width="1.5"
+                stroke-dasharray="4 4"
+                opacity="0.6"
+            />
+            <rect x="161" y="256" width="58" height="48" rx="3" fill="#F2E7D0" stroke="#1C1813" stroke-width="1.5" />
+            <text
+                x="190"
+                y="281"
+                font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
+                font-size="19"
+                font-weight="bold"
+                fill="#1C1813"
+                text-anchor="middle"
+                dominant-baseline="central"
+            >
+                E
+            </text>
+            <rect x="225" y="256" width="58" height="48" rx="3" fill="#F2E7D0" stroke="#1C1813" stroke-width="1.5" />
+            <text
+                x="254"
+                y="281"
+                font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
+                font-size="19"
+                font-weight="bold"
+                fill="#1C1813"
+                text-anchor="middle"
+                dominant-baseline="central"
+            >
+                E
+            </text>
+            <rect x="289" y="256" width="58" height="48" rx="3" fill="#C08A2E" stroke="#1C1813" stroke-width="1.5" />
+            <text
+                x="318"
+                y="281"
+                font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
+                font-size="19"
+                font-weight="bold"
+                fill="#1C1813"
+                text-anchor="middle"
+                dominant-baseline="central"
+            >
+                S
+            </text>
+            <rect x="353" y="256" width="58" height="48" rx="3" fill="url(#hx83)" stroke="#F2E7D0" stroke-width="2" />
+            <text
+                x="382"
+                y="281"
+                font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
+                font-size="15"
+                font-weight="bold"
+                fill="#F2E7D0"
+                text-anchor="middle"
+                dominant-baseline="central"
+                stroke="#1C1813"
+                stroke-width="5"
+                paint-order="stroke"
+                stroke-linejoin="round"
+            >
+                30%
+            </text>
+            <rect x="33" y="310" width="58" height="48" rx="3" fill="#F2E7D0" stroke="#1C1813" stroke-width="1.5" />
+            <text
+                x="62"
+                y="335"
+                font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
+                font-size="19"
+                font-weight="bold"
+                fill="#1C1813"
+                text-anchor="middle"
+                dominant-baseline="central"
+            >
+                E
+            </text>
+            <rect x="97" y="310" width="58" height="48" rx="3" fill="url(#hx83)" stroke="#F2E7D0" stroke-width="2" />
+            <text
+                x="126"
+                y="335"
+                font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
+                font-size="15"
+                font-weight="bold"
+                fill="#F2E7D0"
+                text-anchor="middle"
+                dominant-baseline="central"
+                stroke="#1C1813"
+                stroke-width="5"
+                paint-order="stroke"
+                stroke-linejoin="round"
+            >
+                45%
+            </text>
+            <rect
+                x="161"
+                y="310"
+                width="58"
+                height="48"
+                rx="3"
+                fill="#1C1813"
+                stroke="#F2E7D0"
+                stroke-width="1.5"
+                stroke-dasharray="4 4"
+                opacity="0.6"
+            />
+            <rect x="225" y="310" width="58" height="48" rx="3" fill="url(#hx83)" stroke="#F2E7D0" stroke-width="2" />
+            <text
+                x="254"
+                y="335"
+                font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
+                font-size="15"
+                font-weight="bold"
+                fill="#F2E7D0"
+                text-anchor="middle"
+                dominant-baseline="central"
+                stroke="#1C1813"
+                stroke-width="5"
+                paint-order="stroke"
+                stroke-linejoin="round"
+            >
+                77%
+            </text>
+            <rect
+                x="289"
+                y="310"
+                width="58"
+                height="48"
+                rx="3"
+                fill="#1C1813"
+                stroke="#F2E7D0"
+                stroke-width="1.5"
+                stroke-dasharray="4 4"
+                opacity="0.6"
+            />
+            <rect x="353" y="310" width="58" height="48" rx="3" fill="#F2E7D0" stroke="#1C1813" stroke-width="1.5" />
+            <text
+                x="382"
+                y="335"
+                font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
+                font-size="19"
+                font-weight="bold"
+                fill="#1C1813"
+                text-anchor="middle"
+                dominant-baseline="central"
+            >
+                E
+            </text>
+            <rect x="40" y="382" width="26" height="26" rx="3" fill="#F2E7D0" stroke="#1C1813" stroke-width="1.5" />
+            <text
+                x="74"
+                y="395"
+                font-family="'TeX Gyre Schola','Century Schoolbook',serif"
+                font-size="15"
+                font-weight="normal"
+                fill="#F2E7D0"
+                text-anchor="start"
+                dominant-baseline="central"
+            >
+                Eden
+            </text>
+            <rect x="170" y="382" width="26" height="26" rx="3" fill="#C08A2E" stroke="#1C1813" stroke-width="1.5" />
+            <text
+                x="204"
+                y="395"
+                font-family="'TeX Gyre Schola','Century Schoolbook',serif"
+                font-size="15"
+                font-weight="normal"
+                fill="#F2E7D0"
+                text-anchor="start"
+                dominant-baseline="central"
+            >
+                Survivor
+            </text>
+            <rect x="300" y="382" width="26" height="26" rx="3" fill="#A8321F" stroke="#1C1813" stroke-width="1.5" />
+            <text
+                x="334"
+                y="395"
+                font-family="'TeX Gyre Schola','Century Schoolbook',serif"
+                font-size="15"
+                font-weight="normal"
+                fill="#F2E7D0"
+                text-anchor="start"
+                dominant-baseline="central"
+            >
+                Humongous
+            </text>
+            <rect x="40" y="425" width="26" height="26" rx="3" fill="url(#hx83)" stroke="#F2E7D0" stroke-width="2" />
+            <text
+                x="74"
+                y="438"
+                font-family="'TeX Gyre Schola','Century Schoolbook',serif"
+                font-size="15"
+                font-weight="normal"
+                fill="#F2E7D0"
+                text-anchor="start"
+                dominant-baseline="central"
+            >
+                Old (% vivo)
+            </text>
+            <rect
+                x="200"
+                y="425"
+                width="26"
+                height="26"
+                rx="3"
+                fill="#1C1813"
+                stroke="#F2E7D0"
+                stroke-width="1.5"
+                stroke-dasharray="4 4"
+            />
+            <text
+                x="234"
+                y="438"
+                font-family="'TeX Gyre Schola','Century Schoolbook',serif"
+                font-size="15"
+                font-weight="normal"
+                fill="#F2E7D0"
+                text-anchor="start"
+                dominant-baseline="central"
+            >
+                livre
+            </text>
+            <rect x="0" y="0" width="450" height="500" fill="none" stroke="#1C1813" stroke-width="38" />
+            <rect x="11" y="11" width="428" height="478" fill="none" stroke="#F2E7D0" stroke-width="3.5" />
+            <rect x="19" y="19" width="412" height="462" fill="none" stroke="#F2E7D0" stroke-width="1.2" />
+        </svg>
+    </figure>
+    <div class="ft">Coleta de lixo sob a ótica dos grafos</div>
+    <div class="pg">16</div>
+    <aside class="notes">
+        Garbage-First: o heap vira um conjunto de regiões. A marcação concorrente mede quanto há de vivo em cada região
+        Old, e as coletas mistas escolhem as regiões com mais lixo dentro do orçamento de pausa. Cada região guarda as
+        arestas que entram nela, então qualquer conjunto de regiões pode ser coletado isoladamente. No JDK 26, a JEP 522
+        introduziu duas card tables alternadas.
+    </aside>
+</section>

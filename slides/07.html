@@ -1,7 +1,391 @@
-<section class="slide " data-n="7" aria-roledescription="slide" aria-label="7 de 21: Coletar só um pedaço do grafo"><div class="fr1"></div><div class="fr2"></div><h2 class="tx" style="left:57.60px;top:63.36px;width:1161.60px;height:74.88px;font-size:48.00px;color:var(--ink);line-height:1.17">Coletar só um pedaço do grafo</h2><div class="tx" style="left:57.60px;top:34.56px;width:864.00px;height:28.80px;justify-content:flex-start;color:var(--red);font-size:17.60px;line-height:1.170"><p class="" style="font-size:17.60px;text-align:left;"><span style="font-family:var(--fh);font-weight:700;letter-spacing:3.33px">2 · ALGORITMOS CLÁSSICOS</span></p></div><figure class="im" style="left:57.60px;top:153.60px;width:432.00px;height:480.00px" role="img" aria-label="Gerações velha e jovem; uma aresta vermelha cruza da geração velha para a jovem"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 500" width="100%" height="100%"><defs>
-<pattern id="hx71" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="7" height="7" fill="#1C1813"/><line x1="0" y1="0" x2="0" y2="7" stroke="#F2E7D0" stroke-width="2.4"/></pattern>
-<pattern id="hkx71" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(-35)"><rect width="8" height="8" fill="#F2E7D0"/><line x1="0" y1="0" x2="0" y2="8" stroke="#1C1813" stroke-width="1.6"/></pattern>
-<marker id="apx71" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M1 1L9 5L1 9z" fill="#F2E7D0"/></marker>
-<marker id="arx71" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M1 1L9 5L1 9z" fill="#A8321F"/></marker>
-<marker id="aox71" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M1 1L9 5L1 9z" fill="#C08A2E"/></marker>
-</defs><rect width="450" height="500" fill="#1C1813"/><path d="M0 407l37 0.7M313 335l15 -0.0M231 312l40 0.9M304 158l35 -0.0M435 258l40 -0.1M437 7l29 -0.5M312 152l15 0.9M392 490l54 -1.3M263 90l23 1.5M174 340l26 -0.1M248 415l27 -0.1M293 435l23 -0.7M122 120l24 -1.5M419 209l11 -1.0M268 71l50 -1.3M275 402l35 -0.4M47 48l46 -1.3M225 471l33 0.7M254 113l31 -1.1M21 178l9 0.3M209 200l11 -1.1M78 90l23 0.3M434 267l37 0.1M233 195l36 0.5M274 191l10 1.0M450 175l19 1.3M135 150l43 -0.9M364 199l8 -1.1M71 340l48 -0.3M317 127l49 0.7M43 199l17 0.8M360 279l47 -1.3M54 138l28 0.6M33 325l47 1.4M217 442l24 0.5M242 6l20 1.3M397 194l31 1.0M402 365l12 -0.3M200 192l26 -1.0M220 317l38 0.9M272 460l12 0.4M406 206l34 0.0M217 245l44 -0.5M79 434l43 -0.1M430 26l30 0.0M188 152l17 -0.2M297 211l33 1.2M341 339l34 1.2M102 388l38 1.4M334 197l28 -0.7M73 24l14 1.3M16 192l8 -0.1M419 370l37 0.7M217 447l19 1.3M292 169l40 -0.7M164 87l10 -0.4M360 380l42 0.6M167 207l9 0.4M200 163l16 -0.6M198 442l15 -0.1M27 231l23 -1.4M210 86l51 -0.6M109 148l10 -1.3M367 366l26 1.5M327 299l43 -1.4M224 262l23 -0.1M85 91l23 -0.6M194 26l45 -0.0M54 19l25 -1.4M23 259l22 1.2M448 379l47 1.1M158 461l15 0.5M120 425l31 0.2M86 115l38 0.9M315 263l37 -0.8M292 224l47 -0.2M352 40l18 -0.4M400 434l12 -0.7M50 198l12 -1.2M263 417l32 0.4M220 154l32 -1.0M30 206l46 -0.3M320 433l24 0.9M149 470l49 1.5M321 122l44 -1.5M4 154l28 1.0M131 149l48 1.5" stroke="#F2E7D0" stroke-width="1.2" opacity="0.09" stroke-linecap="round"/><rect x="40" y="40" width="370" height="175" rx="4" fill="#1C1813" stroke="#F2E7D0" stroke-width="2" stroke-dasharray="8 6"/><rect x="40" y="262" width="370" height="200" rx="4" fill="#1C1813" stroke="#F2E7D0" stroke-width="2" stroke-dasharray="8 6"/><text x="62" y="64" font-family="'TeX Gyre Bonum','Bookman Old Style',serif" font-size="17" font-weight="bold" fill="#C08A2E" text-anchor="start" dominant-baseline="central">geração velha</text><text x="62" y="286" font-family="'TeX Gyre Bonum','Bookman Old Style',serif" font-size="17" font-weight="bold" fill="#C08A2E" text-anchor="start" dominant-baseline="central">geração jovem</text><line x1="168.9" y1="138.2" x2="268.1" y2="132.0" stroke="#F2E7D0" stroke-width="3.2" marker-end="url(#apx71)" stroke-linecap="round"/><line x1="189.7" y1="381.3" x2="211.0" y2="404.4" stroke="#F2E7D0" stroke-width="3.2" marker-end="url(#apx71)" stroke-linecap="round"/><line x1="302.3" y1="158.9" x2="317.4" y2="348.1" stroke="#A8321F" stroke-width="5" marker-end="url(#arx71)" stroke-linecap="round"/><g opacity="1"><circle cx="140" cy="140" r="26" fill="#F2E7D0" stroke="#1C1813" stroke-width="2"/><text x="140" y="141" font-family="'TeX Gyre Bonum','Bookman Old Style',serif" font-size="22" font-weight="bold" fill="#1C1813" text-anchor="middle" dominant-baseline="central">V1</text></g><g opacity="1"><circle cx="300" cy="130" r="26" fill="#F2E7D0" stroke="#1C1813" stroke-width="2"/><text x="300" y="131" font-family="'TeX Gyre Bonum','Bookman Old Style',serif" font-size="22" font-weight="bold" fill="#1C1813" text-anchor="middle" dominant-baseline="central">V2</text></g><g opacity="1"><circle cx="320" cy="380" r="26" fill="#F2E7D0" stroke="#1C1813" stroke-width="2"/><text x="320" y="381" font-family="'TeX Gyre Bonum','Bookman Old Style',serif" font-size="22" font-weight="bold" fill="#1C1813" text-anchor="middle" dominant-baseline="central">J1</text></g><g opacity="1"><circle cx="170" cy="360" r="26" fill="#F2E7D0" stroke="#1C1813" stroke-width="2"/><text x="170" y="361" font-family="'TeX Gyre Bonum','Bookman Old Style',serif" font-size="22" font-weight="bold" fill="#1C1813" text-anchor="middle" dominant-baseline="central">J2</text></g><g opacity="0.55"><circle cx="230" cy="425" r="22" fill="#1C1813" stroke="#F2E7D0" stroke-width="2.5" stroke-dasharray="6 5"/><text x="230" y="426" font-family="'TeX Gyre Bonum','Bookman Old Style',serif" font-size="22" font-weight="bold" fill="#F2E7D0" text-anchor="middle" dominant-baseline="central">J3</text></g><text x="382" y="242" font-family="'TeX Gyre Schola','Century Schoolbook',serif" font-size="15" font-weight="bold" fill="#A8321F" text-anchor="end" dominant-baseline="central" stroke="#1C1813" stroke-width="5" paint-order="stroke" stroke-linejoin="round">cruza o corte</text><rect x="0" y="0" width="450" height="500" fill="none" stroke="#1C1813" stroke-width="38"/><rect x="11" y="11" width="428" height="478" fill="none" stroke="#F2E7D0" stroke-width="3.5"/><rect x="19" y="19" width="412" height="462" fill="none" stroke="#F2E7D0" stroke-width="1.2"/></svg></figure><div class="rc" style="left:523.20px;top:153.60px;width:698.88px;height:220.80px;background:var(--kraft);border:1.33px solid var(--ink)"></div><div class="tx" style="left:547.20px;top:168.96px;width:650.88px;height:38.40px;justify-content:flex-start;color:var(--ink);font-size:26.40px;line-height:1.170"><p class="" style="font-size:26.40px;text-align:left;"><span style="font-family:var(--fh);font-weight:700">Cópia (Cheney, 1970)</span></p></div><div class="tx" style="left:547.20px;top:213.12px;width:650.88px;height:144.00px;justify-content:flex-start;color:var(--ink);font-size:22.00px;line-height:1.228"><p class="bl" style="font-size:22.00px;text-align:left;margin-bottom:6.67px"><span style="font-family:var(--fb)">BFS que copia cada objeto vivo para uma área nova.</span></p><p class="bl" style="font-size:22.00px;text-align:left;margin-bottom:6.67px"><span style="font-family:var(--fb)">A área nova serve de fila, com dois ponteiros: </span><span style="font-family:var(--fm)">scan</span><span style="font-family:var(--fb)"> e </span><span style="font-family:var(--fm)">free</span><span style="font-family:var(--fb)">.</span></p><p class="bl" style="font-size:22.00px;text-align:left;"><span style="font-family:var(--fb)">Custo proporcional só aos vivos; a memória sai compactada.</span></p></div><div class="rc" style="left:523.20px;top:393.60px;width:698.88px;height:240.00px;background:var(--kraft);border:1.33px solid var(--ink)"></div><div class="tx" style="left:547.20px;top:408.96px;width:650.88px;height:38.40px;justify-content:flex-start;color:var(--ink);font-size:26.40px;line-height:1.170"><p class="" style="font-size:26.40px;text-align:left;"><span style="font-family:var(--fh);font-weight:700">Gerações (Ungar, 1984)</span></p></div><div class="tx" style="left:547.20px;top:453.12px;width:650.88px;height:163.20px;justify-content:flex-start;color:var(--ink);font-size:22.00px;line-height:1.228"><p class="bl" style="font-size:22.00px;text-align:left;margin-bottom:6.67px"><span style="font-family:var(--fb)">A maioria dos objetos morre jovem: o subgrafo jovem é coletado mais vezes.</span></p><p class="bl" style="font-size:22.00px;text-align:left;margin-bottom:6.67px"><span style="font-family:var(--fb)">Arestas da geração velha para a jovem cruzam o corte e viram raízes extras.</span></p><p class="bl" style="font-size:22.00px;text-align:left;"><span style="font-family:var(--fb)">O índice dessas arestas se chama remembered set.</span></p></div><div class="ft">Coleta de lixo sob a ótica dos grafos</div><div class="pg">7</div><aside class="notes">Cheney, 1970: a área de destino funciona como a fila da BFS; o ponteiro de encaminhamento deixado no objeto antigo faz o papel do conjunto de visitados. Hipótese geracional: a maioria dos objetos morre jovem. Para coletar só o subgrafo jovem, as arestas que cruzam o corte velho → jovem precisam ser tratadas como raízes extras.</aside></section>
+<section class="slide" data-n="7" aria-roledescription="slide" aria-label="7 de 21: Coletar só um pedaço do grafo">
+    <div class="fr1"></div>
+    <div class="fr2"></div>
+    <h2
+        class="tx"
+        style="
+            left: 57.6px;
+            top: 63.36px;
+            width: 1161.6px;
+            height: 74.88px;
+            font-size: 48px;
+            color: var(--ink);
+            line-height: 1.17;
+        "
+    >
+        Coletar só um pedaço do grafo
+    </h2>
+    <div
+        class="tx"
+        style="
+            left: 57.6px;
+            top: 34.56px;
+            width: 864px;
+            height: 28.8px;
+            justify-content: flex-start;
+            color: var(--red);
+            font-size: 17.6px;
+            line-height: 1.17;
+        "
+    >
+        <p class="" style="font-size: 17.6px; text-align: left">
+            <span style="font-family: var(--fh); font-weight: 700; letter-spacing: 3.33px"
+                >2 · ALGORITMOS CLÁSSICOS</span
+            >
+        </p>
+    </div>
+    <figure
+        class="im"
+        style="left: 57.6px; top: 153.6px; width: 432px; height: 480px"
+        role="img"
+        aria-label="Gerações velha e jovem; uma aresta vermelha cruza da geração velha para a jovem"
+    >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 500" width="100%" height="100%">
+            <defs>
+                <pattern id="hx71" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                    <rect width="7" height="7" fill="#1C1813" />
+                    <line x1="0" y1="0" x2="0" y2="7" stroke="#F2E7D0" stroke-width="2.4" />
+                </pattern>
+                <pattern id="hkx71" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(-35)">
+                    <rect width="8" height="8" fill="#F2E7D0" />
+                    <line x1="0" y1="0" x2="0" y2="8" stroke="#1C1813" stroke-width="1.6" />
+                </pattern>
+                <marker
+                    id="apx71"
+                    viewBox="0 0 10 10"
+                    refX="8"
+                    refY="5"
+                    markerWidth="4.2"
+                    markerHeight="4.2"
+                    orient="auto-start-reverse"
+                >
+                    <path d="M1 1L9 5L1 9z" fill="#F2E7D0" />
+                </marker>
+                <marker
+                    id="arx71"
+                    viewBox="0 0 10 10"
+                    refX="8"
+                    refY="5"
+                    markerWidth="4.2"
+                    markerHeight="4.2"
+                    orient="auto-start-reverse"
+                >
+                    <path d="M1 1L9 5L1 9z" fill="#A8321F" />
+                </marker>
+                <marker
+                    id="aox71"
+                    viewBox="0 0 10 10"
+                    refX="8"
+                    refY="5"
+                    markerWidth="4.2"
+                    markerHeight="4.2"
+                    orient="auto-start-reverse"
+                >
+                    <path d="M1 1L9 5L1 9z" fill="#C08A2E" />
+                </marker>
+            </defs>
+            <rect width="450" height="500" fill="#1C1813" />
+            <path
+                d="M0 407l37 0.7M313 335l15 -0.0M231 312l40 0.9M304 158l35 -0.0M435 258l40 -0.1M437 7l29 -0.5M312 152l15 0.9M392 490l54 -1.3M263 90l23 1.5M174 340l26 -0.1M248 415l27 -0.1M293 435l23 -0.7M122 120l24 -1.5M419 209l11 -1.0M268 71l50 -1.3M275 402l35 -0.4M47 48l46 -1.3M225 471l33 0.7M254 113l31 -1.1M21 178l9 0.3M209 200l11 -1.1M78 90l23 0.3M434 267l37 0.1M233 195l36 0.5M274 191l10 1.0M450 175l19 1.3M135 150l43 -0.9M364 199l8 -1.1M71 340l48 -0.3M317 127l49 0.7M43 199l17 0.8M360 279l47 -1.3M54 138l28 0.6M33 325l47 1.4M217 442l24 0.5M242 6l20 1.3M397 194l31 1.0M402 365l12 -0.3M200 192l26 -1.0M220 317l38 0.9M272 460l12 0.4M406 206l34 0.0M217 245l44 -0.5M79 434l43 -0.1M430 26l30 0.0M188 152l17 -0.2M297 211l33 1.2M341 339l34 1.2M102 388l38 1.4M334 197l28 -0.7M73 24l14 1.3M16 192l8 -0.1M419 370l37 0.7M217 447l19 1.3M292 169l40 -0.7M164 87l10 -0.4M360 380l42 0.6M167 207l9 0.4M200 163l16 -0.6M198 442l15 -0.1M27 231l23 -1.4M210 86l51 -0.6M109 148l10 -1.3M367 366l26 1.5M327 299l43 -1.4M224 262l23 -0.1M85 91l23 -0.6M194 26l45 -0.0M54 19l25 -1.4M23 259l22 1.2M448 379l47 1.1M158 461l15 0.5M120 425l31 0.2M86 115l38 0.9M315 263l37 -0.8M292 224l47 -0.2M352 40l18 -0.4M400 434l12 -0.7M50 198l12 -1.2M263 417l32 0.4M220 154l32 -1.0M30 206l46 -0.3M320 433l24 0.9M149 470l49 1.5M321 122l44 -1.5M4 154l28 1.0M131 149l48 1.5"
+                stroke="#F2E7D0"
+                stroke-width="1.2"
+                opacity="0.09"
+                stroke-linecap="round"
+            />
+            <rect
+                x="40"
+                y="40"
+                width="370"
+                height="175"
+                rx="4"
+                fill="#1C1813"
+                stroke="#F2E7D0"
+                stroke-width="2"
+                stroke-dasharray="8 6"
+            />
+            <rect
+                x="40"
+                y="262"
+                width="370"
+                height="200"
+                rx="4"
+                fill="#1C1813"
+                stroke="#F2E7D0"
+                stroke-width="2"
+                stroke-dasharray="8 6"
+            />
+            <text
+                x="62"
+                y="64"
+                font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
+                font-size="17"
+                font-weight="bold"
+                fill="#C08A2E"
+                text-anchor="start"
+                dominant-baseline="central"
+            >
+                geração velha
+            </text>
+            <text
+                x="62"
+                y="286"
+                font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
+                font-size="17"
+                font-weight="bold"
+                fill="#C08A2E"
+                text-anchor="start"
+                dominant-baseline="central"
+            >
+                geração jovem
+            </text>
+            <line
+                x1="168.9"
+                y1="138.2"
+                x2="268.1"
+                y2="132.0"
+                stroke="#F2E7D0"
+                stroke-width="3.2"
+                marker-end="url(#apx71)"
+                stroke-linecap="round"
+            />
+            <line
+                x1="189.7"
+                y1="381.3"
+                x2="211.0"
+                y2="404.4"
+                stroke="#F2E7D0"
+                stroke-width="3.2"
+                marker-end="url(#apx71)"
+                stroke-linecap="round"
+            />
+            <line
+                x1="302.3"
+                y1="158.9"
+                x2="317.4"
+                y2="348.1"
+                stroke="#A8321F"
+                stroke-width="5"
+                marker-end="url(#arx71)"
+                stroke-linecap="round"
+            />
+            <g opacity="1">
+                <circle cx="140" cy="140" r="26" fill="#F2E7D0" stroke="#1C1813" stroke-width="2" />
+                <text
+                    x="140"
+                    y="141"
+                    font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
+                    font-size="22"
+                    font-weight="bold"
+                    fill="#1C1813"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                >
+                    V1
+                </text>
+            </g>
+            <g opacity="1">
+                <circle cx="300" cy="130" r="26" fill="#F2E7D0" stroke="#1C1813" stroke-width="2" />
+                <text
+                    x="300"
+                    y="131"
+                    font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
+                    font-size="22"
+                    font-weight="bold"
+                    fill="#1C1813"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                >
+                    V2
+                </text>
+            </g>
+            <g opacity="1">
+                <circle cx="320" cy="380" r="26" fill="#F2E7D0" stroke="#1C1813" stroke-width="2" />
+                <text
+                    x="320"
+                    y="381"
+                    font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
+                    font-size="22"
+                    font-weight="bold"
+                    fill="#1C1813"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                >
+                    J1
+                </text>
+            </g>
+            <g opacity="1">
+                <circle cx="170" cy="360" r="26" fill="#F2E7D0" stroke="#1C1813" stroke-width="2" />
+                <text
+                    x="170"
+                    y="361"
+                    font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
+                    font-size="22"
+                    font-weight="bold"
+                    fill="#1C1813"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                >
+                    J2
+                </text>
+            </g>
+            <g opacity="0.55">
+                <circle
+                    cx="230"
+                    cy="425"
+                    r="22"
+                    fill="#1C1813"
+                    stroke="#F2E7D0"
+                    stroke-width="2.5"
+                    stroke-dasharray="6 5"
+                />
+                <text
+                    x="230"
+                    y="426"
+                    font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
+                    font-size="22"
+                    font-weight="bold"
+                    fill="#F2E7D0"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                >
+                    J3
+                </text>
+            </g>
+            <text
+                x="382"
+                y="242"
+                font-family="'TeX Gyre Schola','Century Schoolbook',serif"
+                font-size="15"
+                font-weight="bold"
+                fill="#A8321F"
+                text-anchor="end"
+                dominant-baseline="central"
+                stroke="#1C1813"
+                stroke-width="5"
+                paint-order="stroke"
+                stroke-linejoin="round"
+            >
+                cruza o corte
+            </text>
+            <rect x="0" y="0" width="450" height="500" fill="none" stroke="#1C1813" stroke-width="38" />
+            <rect x="11" y="11" width="428" height="478" fill="none" stroke="#F2E7D0" stroke-width="3.5" />
+            <rect x="19" y="19" width="412" height="462" fill="none" stroke="#F2E7D0" stroke-width="1.2" />
+        </svg>
+    </figure>
+    <div
+        class="rc"
+        style="
+            left: 523.2px;
+            top: 153.6px;
+            width: 698.88px;
+            height: 220.8px;
+            background: var(--kraft);
+            border: 1.33px solid var(--ink);
+        "
+    ></div>
+    <div
+        class="tx"
+        style="
+            left: 547.2px;
+            top: 168.96px;
+            width: 650.88px;
+            height: 38.4px;
+            justify-content: flex-start;
+            color: var(--ink);
+            font-size: 26.4px;
+            line-height: 1.17;
+        "
+    >
+        <p class="" style="font-size: 26.4px; text-align: left">
+            <span style="font-family: var(--fh); font-weight: 700">Cópia (Cheney, 1970)</span>
+        </p>
+    </div>
+    <div
+        class="tx"
+        style="
+            left: 547.2px;
+            top: 213.12px;
+            width: 650.88px;
+            height: 144px;
+            justify-content: flex-start;
+            color: var(--ink);
+            font-size: 22px;
+            line-height: 1.228;
+        "
+    >
+        <p class="bl" style="font-size: 22px; text-align: left; margin-bottom: 6.67px">
+            <span style="font-family: var(--fb)">BFS que copia cada objeto vivo para uma área nova.</span>
+        </p>
+        <p class="bl" style="font-size: 22px; text-align: left; margin-bottom: 6.67px">
+            <span style="font-family: var(--fb)">A área nova serve de fila, com dois ponteiros: </span
+            ><span style="font-family: var(--fm)">scan</span><span style="font-family: var(--fb)"> e </span
+            ><span style="font-family: var(--fm)">free</span><span style="font-family: var(--fb)">.</span>
+        </p>
+        <p class="bl" style="font-size: 22px; text-align: left">
+            <span style="font-family: var(--fb)">Custo proporcional só aos vivos; a memória sai compactada.</span>
+        </p>
+    </div>
+    <div
+        class="rc"
+        style="
+            left: 523.2px;
+            top: 393.6px;
+            width: 698.88px;
+            height: 240px;
+            background: var(--kraft);
+            border: 1.33px solid var(--ink);
+        "
+    ></div>
+    <div
+        class="tx"
+        style="
+            left: 547.2px;
+            top: 408.96px;
+            width: 650.88px;
+            height: 38.4px;
+            justify-content: flex-start;
+            color: var(--ink);
+            font-size: 26.4px;
+            line-height: 1.17;
+        "
+    >
+        <p class="" style="font-size: 26.4px; text-align: left">
+            <span style="font-family: var(--fh); font-weight: 700">Gerações (Ungar, 1984)</span>
+        </p>
+    </div>
+    <div
+        class="tx"
+        style="
+            left: 547.2px;
+            top: 453.12px;
+            width: 650.88px;
+            height: 163.2px;
+            justify-content: flex-start;
+            color: var(--ink);
+            font-size: 22px;
+            line-height: 1.228;
+        "
+    >
+        <p class="bl" style="font-size: 22px; text-align: left; margin-bottom: 6.67px">
+            <span style="font-family: var(--fb)"
+                >A maioria dos objetos morre jovem: o subgrafo jovem é coletado mais vezes.</span
+            >
+        </p>
+        <p class="bl" style="font-size: 22px; text-align: left; margin-bottom: 6.67px">
+            <span style="font-family: var(--fb)"
+                >Arestas da geração velha para a jovem cruzam o corte e viram raízes extras.</span
+            >
+        </p>
+        <p class="bl" style="font-size: 22px; text-align: left">
+            <span style="font-family: var(--fb)">O índice dessas arestas se chama remembered set.</span>
+        </p>
+    </div>
+    <div class="ft">Coleta de lixo sob a ótica dos grafos</div>
+    <div class="pg">7</div>
+    <aside class="notes">
+        Cheney, 1970: a área de destino funciona como a fila da BFS; o ponteiro de encaminhamento deixado no objeto
+        antigo faz o papel do conjunto de visitados. Hipótese geracional: a maioria dos objetos morre jovem. Para
+        coletar só o subgrafo jovem, as arestas que cruzam o corte velho → jovem precisam ser tratadas como raízes
+        extras.
+    </aside>
+</section>
