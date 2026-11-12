@@ -132,6 +132,9 @@ body {
     overflow: visible;
     line-height: 1.17;
 }
+.tx span {
+    white-space: normal;
+}
 /* título e chapéu, iguais em quase todos os slides */
 .titulo {
     left: 57.6px;

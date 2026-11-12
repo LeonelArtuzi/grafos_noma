@@ -1,30 +1,204 @@
-<section class="slide" data-n="10" aria-roledescription="slide" aria-label="10 de 21: Python: duas camadas de coleta">
+<section class="slide" data-n="10" aria-roledescription="slide" aria-label="10 de 14: O truque: deduzir as raízes">
     <div class="fr1"></div>
     <div class="fr2"></div>
-    <h2 class="tx titulo">Python: duas camadas de coleta</h2>
+    <h2 class="tx titulo">O truque: deduzir as raízes</h2>
     <div class="tx chapeu">
         <p>
             <span class="fonte-titulo negrito espacado">3 · PYTHON</span>
         </p>
     </div>
+    <div class="rc papel" style="left: 57.6px; top: 153.6px; width: 268.8px; height: 273.6px"></div>
+    <div class="rc escuro" style="left: 78.72px; top: 172.8px; width: 48px; height: 48px"></div>
+    <div
+        class="tx"
+        style="
+            left: 78.72px;
+            top: 172.8px;
+            width: 48px;
+            height: 48px;
+            justify-content: center;
+            color: var(--paper);
+            font-size: 26.67px;
+        "
+    >
+        <p style="text-align: center">
+            <span class="fonte-titulo negrito">1</span>
+        </p>
+    </div>
+    <div
+        class="tx"
+        style="left: 78.72px; top: 235.2px; width: 230.4px; height: 34.56px; color: var(--red); font-size: 22px"
+    >
+        <p>
+            <span class="fonte-mono negrito">update_refs</span>
+        </p>
+    </div>
+    <div
+        class="tx"
+        style="
+            left: 78.72px;
+            top: 278.4px;
+            width: 230.4px;
+            height: 144px;
+            color: var(--ink);
+            font-size: 23.46px;
+            line-height: 1.228;
+        "
+    >
+        <p>
+            <span class="fonte-corpo">Copia o refcount para gc_refs: o grau de entrada total.</span>
+        </p>
+    </div>
+    <div class="rc papel" style="left: 355.2px; top: 153.6px; width: 268.8px; height: 273.6px"></div>
+    <div class="rc escuro" style="left: 376.32px; top: 172.8px; width: 48px; height: 48px"></div>
+    <div
+        class="tx"
+        style="
+            left: 376.32px;
+            top: 172.8px;
+            width: 48px;
+            height: 48px;
+            justify-content: center;
+            color: var(--paper);
+            font-size: 26.67px;
+        "
+    >
+        <p style="text-align: center">
+            <span class="fonte-titulo negrito">2</span>
+        </p>
+    </div>
+    <div
+        class="tx"
+        style="left: 376.32px; top: 235.2px; width: 230.4px; height: 34.56px; color: var(--red); font-size: 22px"
+    >
+        <p>
+            <span class="fonte-mono negrito">subtract_refs</span>
+        </p>
+    </div>
+    <div
+        class="tx"
+        style="
+            left: 376.32px;
+            top: 278.4px;
+            width: 230.4px;
+            height: 144px;
+            color: var(--ink);
+            font-size: 23.46px;
+            line-height: 1.228;
+        "
+    >
+        <p>
+            <span class="fonte-corpo"
+                >Subtrai 1 do destino de cada aresta interna. Sobram só as arestas vindas de fora.</span
+            >
+        </p>
+    </div>
+    <div class="rc papel" style="left: 652.8px; top: 153.6px; width: 268.8px; height: 273.6px"></div>
+    <div class="rc escuro" style="left: 673.92px; top: 172.8px; width: 48px; height: 48px"></div>
+    <div
+        class="tx"
+        style="
+            left: 673.92px;
+            top: 172.8px;
+            width: 48px;
+            height: 48px;
+            justify-content: center;
+            color: var(--paper);
+            font-size: 26.67px;
+        "
+    >
+        <p style="text-align: center">
+            <span class="fonte-titulo negrito">3</span>
+        </p>
+    </div>
+    <div
+        class="tx"
+        style="left: 673.92px; top: 235.2px; width: 230.4px; height: 34.56px; color: var(--red); font-size: 22px"
+    >
+        <p>
+            <span class="fonte-mono negrito">move_unreachable</span>
+        </p>
+    </div>
+    <div
+        class="tx"
+        style="
+            left: 673.92px;
+            top: 278.4px;
+            width: 230.4px;
+            height: 144px;
+            color: var(--ink);
+            font-size: 23.46px;
+            line-height: 1.228;
+        "
+    >
+        <p>
+            <span class="fonte-corpo"
+                >gc_refs &gt; 0 marca uma raiz. Uma busca a partir delas resgata os alcançáveis.</span
+            >
+        </p>
+    </div>
+    <div class="rc papel" style="left: 950.4px; top: 153.6px; width: 268.8px; height: 273.6px"></div>
+    <div class="rc escuro" style="left: 971.52px; top: 172.8px; width: 48px; height: 48px"></div>
+    <div
+        class="tx"
+        style="
+            left: 971.52px;
+            top: 172.8px;
+            width: 48px;
+            height: 48px;
+            justify-content: center;
+            color: var(--paper);
+            font-size: 26.67px;
+        "
+    >
+        <p style="text-align: center">
+            <span class="fonte-titulo negrito">4</span>
+        </p>
+    </div>
+    <div
+        class="tx"
+        style="left: 971.52px; top: 235.2px; width: 230.4px; height: 34.56px; color: var(--red); font-size: 22px"
+    >
+        <p>
+            <span class="fonte-mono negrito">tp_clear</span>
+        </p>
+    </div>
+    <div
+        class="tx"
+        style="
+            left: 971.52px;
+            top: 278.4px;
+            width: 230.4px;
+            height: 144px;
+            color: var(--ink);
+            font-size: 23.46px;
+            line-height: 1.228;
+        "
+    >
+        <p>
+            <span class="fonte-corpo"
+                >Chama __del__ uma vez (PEP 442), confere ressurreições e quebra os ciclos restantes.</span
+            >
+        </p>
+    </div>
     <figure
         class="im"
-        style="left: 57.6px; top: 153.6px; width: 432px; height: 480px"
+        style="left: 57.6px; top: 451.2px; width: 1161.6px; height: 177.6px"
         role="img"
-        aria-label="Camada 1: contador caindo de 3 a 0; camada 2: ciclo de três nós encontrado pelo detector"
+        aria-label="Exemplo: x aponta para A; A, B e C formam um ciclo resgatado; D e E formam um ciclo com gc_refs zero, coletado"
     >
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 500" width="100%" height="100%">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1210 185" width="100%" height="100%">
             <defs>
-                <pattern id="hx74" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                <pattern id="hx75" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
                     <rect width="7" height="7" fill="#1C1813" />
                     <line x1="0" y1="0" x2="0" y2="7" stroke="#F2E7D0" stroke-width="2.4" />
                 </pattern>
-                <pattern id="hkx74" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(-35)">
+                <pattern id="hkx75" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(-35)">
                     <rect width="8" height="8" fill="#F2E7D0" />
                     <line x1="0" y1="0" x2="0" y2="8" stroke="#1C1813" stroke-width="1.6" />
                 </pattern>
                 <marker
-                    id="apx74"
+                    id="apx75"
                     viewBox="0 0 10 10"
                     refX="8"
                     refY="5"
@@ -35,7 +209,7 @@
                     <path d="M1 1L9 5L1 9z" fill="#F2E7D0" />
                 </marker>
                 <marker
-                    id="arx74"
+                    id="arx75"
                     viewBox="0 0 10 10"
                     refX="8"
                     refY="5"
@@ -46,7 +220,7 @@
                     <path d="M1 1L9 5L1 9z" fill="#A8321F" />
                 </marker>
                 <marker
-                    id="aox74"
+                    id="aox75"
                     viewBox="0 0 10 10"
                     refX="8"
                     refY="5"
@@ -57,285 +231,257 @@
                     <path d="M1 1L9 5L1 9z" fill="#C08A2E" />
                 </marker>
             </defs>
-            <rect width="450" height="500" fill="#1C1813" />
+            <rect width="1210" height="185" fill="#1C1813" />
             <path
-                d="M0 327l17 -1.0M69 368l45 1.5M10 355l11 -1.3M139 400l23 1.2M163 312l11 -0.3M367 314l41 -0.4M243 341l29 1.4M313 398l42 0.7M116 422l37 0.3M110 135l21 0.3M5 293l33 -1.4M348 444l15 0.5M40 175l12 0.6M117 134l13 -0.0M184 355l38 1.2M125 433l46 1.0M413 6l34 -0.5M346 487l34 -1.2M200 10l50 0.4M99 28l39 -0.3M24 77l21 0.8M148 497l37 0.8M430 487l49 0.9M195 288l48 0.1M170 81l45 0.4M235 451l20 -0.2M203 152l54 0.5M131 188l26 0.3M415 75l36 -0.9M424 116l49 0.2M167 121l19 0.2M80 248l53 -0.2M294 360l47 1.0M80 95l20 -0.3M216 475l34 -0.0M359 194l10 -1.5M291 55l30 0.8M190 285l35 1.0M94 90l48 1.4M119 376l24 -1.4M34 295l33 -0.1M134 18l33 0.0M336 118l37 0.7M210 69l43 0.3M224 472l28 1.1M140 318l32 -0.1M352 218l10 0.4M117 365l16 1.4M284 111l18 -0.2M27 126l35 0.9M363 439l52 -0.6M429 217l32 0.5M170 268l41 -1.5M289 55l27 1.4M386 115l12 0.1M346 262l32 -0.7M354 302l12 -0.8M74 124l14 -1.2M27 137l30 -1.1M206 64l34 0.6M181 309l48 -0.5M260 67l51 -0.2M31 462l10 -1.3M289 457l47 1.0M127 63l37 0.8M190 63l38 0.4M398 498l23 -0.6M255 247l14 0.8M260 403l11 -1.5M417 247l18 1.1M320 458l33 0.4M346 199l10 -0.8M307 164l12 0.8M10 415l50 -0.8M348 206l25 -0.4M178 494l19 -0.6M257 228l26 1.0M309 256l43 0.3M390 314l40 1.3M264 48l22 0.5M394 52l48 0.3M433 406l16 0.4M434 449l52 1.5M375 98l33 -0.3M280 170l52 0.2M187 388l37 -1.4M172 262l23 -1.0"
+                d="M1 92l44 0.2M742 148l30 -0.0M645 147l28 -0.5M1139 53l12 -0.5M919 135l28 -0.4M800 45l52 -0.3M467 11l42 -1.1M629 113l30 -0.3M1129 94l51 -1.0M122 159l15 0.6M567 63l38 0.2M1082 167l8 -1.4M1098 85l46 -0.3M712 21l14 1.0M265 51l25 0.8M1140 172l10 -0.6M885 172l21 0.4M46 1l34 -0.0M391 150l23 -1.1M476 140l24 -1.0M778 168l31 -0.3M585 149l51 1.2M1148 77l15 -1.2M419 141l15 -0.4M179 175l35 -0.1M53 84l21 1.3M730 57l19 -1.1M935 66l43 -1.2M829 115l25 1.5M215 39l49 -0.3M779 16l21 -0.4M669 80l13 0.9M224 31l20 1.3M341 135l38 1.0M575 3l44 -0.5M73 141l46 -1.3M501 154l30 0.5M1152 76l12 -0.6M1177 181l23 0.8M46 161l11 -0.6M659 48l53 -0.6M842 122l32 -0.0M14 181l29 -1.1M915 76l43 0.6M49 155l26 -0.7M248 179l47 0.0M1097 83l34 -0.5M922 145l43 -1.3M45 124l45 1.2M460 20l42 -0.5M548 131l44 0.5M1053 90l11 1.1M1000 62l44 -0.7M972 60l35 1.5M83 22l29 0.9M209 162l9 -0.9M938 83l28 0.9M1159 15l20 0.2M817 41l44 1.5M575 69l54 1.2M899 143l27 0.4M835 17l50 0.3M1085 102l11 -1.2M567 18l23 0.6M1013 121l31 -0.1M420 135l53 0.8M702 150l23 -0.6M848 174l29 -1.4M44 106l43 1.4M971 86l14 0.9M517 14l18 -0.3M224 162l52 1.0M116 149l40 1.5M1033 80l17 0.5M1021 55l14 0.0M173 98l36 -1.0M438 154l34 -0.6M586 29l28 1.4M752 159l23 0.9M713 67l13 0.7M315 166l17 -1.4M1036 39l32 1.1M264 172l35 -1.0M407 84l18 1.0M645 80l14 -1.1M992 45l46 -0.8"
                 stroke="#F2E7D0"
                 stroke-width="1.2"
                 opacity="0.09"
                 stroke-linecap="round"
             />
+            <line
+                x1="115.0"
+                y1="72.0"
+                x2="198.0"
+                y2="72.0"
+                stroke="#F2E7D0"
+                stroke-width="3.2"
+                marker-end="url(#apx75)"
+                stroke-linecap="round"
+            />
+            <line
+                x1="259.0"
+                y1="72.0"
+                x2="348.0"
+                y2="72.0"
+                stroke="#F2E7D0"
+                stroke-width="3.2"
+                marker-end="url(#apx75)"
+                stroke-linecap="round"
+            />
+            <line
+                x1="358.2"
+                y1="91.2"
+                x2="326.0"
+                y2="119.5"
+                stroke="#F2E7D0"
+                stroke-width="3.2"
+                marker-end="url(#apx75)"
+                stroke-linecap="round"
+            />
+            <line
+                x1="286.2"
+                y1="121.5"
+                x2="254.0"
+                y2="93.1"
+                stroke="#F2E7D0"
+                stroke-width="3.2"
+                marker-end="url(#apx75)"
+                stroke-linecap="round"
+            />
+            <rect x="50" y="52" width="62" height="40" rx="4" fill="#C08A2E" stroke="#1C1813" stroke-width="2" />
             <text
-                x="225"
-                y="56"
+                x="81"
+                y="73"
                 font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
-                font-size="19"
-                font-weight="bold"
-                fill="#C08A2E"
-                text-anchor="middle"
-                dominant-baseline="central"
-            >
-                camada 1
-            </text>
-            <rect x="36" y="88" width="68" height="68" rx="4" fill="#F2E7D0" stroke="#1C1813" stroke-width="2" />
-            <text
-                x="70"
-                y="123"
-                font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
-                font-size="34"
+                font-size="17"
                 font-weight="bold"
                 fill="#1C1813"
                 text-anchor="middle"
                 dominant-baseline="central"
             >
-                3
+                x
             </text>
-            <line x1="110" y1="122" x2="126" y2="122" stroke="#F2E7D0" stroke-width="3" marker-end="url(#apx74)" />
-            <rect x="136" y="88" width="68" height="68" rx="4" fill="#F2E7D0" stroke="#1C1813" stroke-width="2" />
-            <text
-                x="170"
-                y="123"
-                font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
-                font-size="34"
-                font-weight="bold"
-                fill="#1C1813"
-                text-anchor="middle"
-                dominant-baseline="central"
-            >
-                2
-            </text>
-            <line x1="210" y1="122" x2="226" y2="122" stroke="#F2E7D0" stroke-width="3" marker-end="url(#apx74)" />
-            <rect x="236" y="88" width="68" height="68" rx="4" fill="#F2E7D0" stroke="#1C1813" stroke-width="2" />
-            <text
-                x="270"
-                y="123"
-                font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
-                font-size="34"
-                font-weight="bold"
-                fill="#1C1813"
-                text-anchor="middle"
-                dominant-baseline="central"
-            >
-                1
-            </text>
-            <line x1="310" y1="122" x2="326" y2="122" stroke="#F2E7D0" stroke-width="3" marker-end="url(#apx74)" />
-            <rect x="336" y="88" width="68" height="68" rx="4" fill="#A8321F" stroke="#1C1813" stroke-width="2" />
-            <text
-                x="370"
-                y="123"
-                font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
-                font-size="34"
-                font-weight="bold"
-                fill="#F2E7D0"
-                text-anchor="middle"
-                dominant-baseline="central"
-            >
-                0
-            </text>
-            <text
-                x="225"
-                y="184"
-                font-family="'Courier New','Liberation Mono',monospace"
-                font-size="15"
-                font-weight="normal"
-                fill="#F2E7D0"
-                text-anchor="middle"
-                dominant-baseline="central"
-            >
-                ob_refcnt cai a cada DECREF
-            </text>
-            <line x1="40" y1="228" x2="410" y2="228" stroke="#F2E7D0" stroke-width="1.5" stroke-dasharray="3 6" />
-            <text
-                x="225"
-                y="268"
-                font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
-                font-size="19"
-                font-weight="bold"
-                fill="#C08A2E"
-                text-anchor="middle"
-                dominant-baseline="central"
-            >
-                camada 2
-            </text>
-            <line
-                x1="245.8"
-                y1="338.2"
-                x2="297.0"
-                y2="387.7"
-                stroke="#F2E7D0"
-                stroke-width="3.2"
-                marker-end="url(#apx74)"
-                stroke-linecap="round"
-            />
-            <line
-                x1="291.0"
-                y1="410.0"
-                x2="162.0"
-                y2="410.0"
-                stroke="#F2E7D0"
-                stroke-width="3.2"
-                marker-end="url(#apx74)"
-                stroke-linecap="round"
-            />
-            <line
-                x1="150.8"
-                y1="389.8"
-                x2="202.0"
-                y2="340.3"
-                stroke="#F2E7D0"
-                stroke-width="3.2"
-                marker-end="url(#apx74)"
-                stroke-linecap="round"
-            />
             <g opacity="1">
-                <circle cx="225" cy="318" r="26" fill="url(#hx74)" stroke="#F2E7D0" stroke-width="3.5" />
+                <circle cx="230" cy="72" r="26" fill="#F2E7D0" stroke="#1C1813" stroke-width="2" />
                 <text
-                    x="225"
-                    y="319"
+                    x="230"
+                    y="73"
                     font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
                     font-size="22"
                     font-weight="bold"
-                    fill="#F2E7D0"
+                    fill="#1C1813"
                     text-anchor="middle"
                     dominant-baseline="central"
-                    stroke="#1C1813"
-                    stroke-width="6"
-                    paint-order="stroke"
-                    stroke-linejoin="round"
                 >
                     A
                 </text>
             </g>
             <g opacity="1">
-                <circle cx="320" cy="410" r="26" fill="url(#hx74)" stroke="#F2E7D0" stroke-width="3.5" />
+                <circle cx="380" cy="72" r="26" fill="#F2E7D0" stroke="#1C1813" stroke-width="2" />
                 <text
-                    x="320"
-                    y="411"
+                    x="380"
+                    y="73"
                     font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
                     font-size="22"
                     font-weight="bold"
-                    fill="#F2E7D0"
+                    fill="#1C1813"
                     text-anchor="middle"
                     dominant-baseline="central"
-                    stroke="#1C1813"
-                    stroke-width="6"
-                    paint-order="stroke"
-                    stroke-linejoin="round"
                 >
                     B
                 </text>
             </g>
             <g opacity="1">
-                <circle cx="130" cy="410" r="26" fill="url(#hx74)" stroke="#F2E7D0" stroke-width="3.5" />
+                <circle cx="305" cy="138" r="22" fill="#F2E7D0" stroke="#1C1813" stroke-width="2" />
                 <text
-                    x="130"
-                    y="411"
+                    x="305"
+                    y="139"
                     font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
-                    font-size="22"
+                    font-size="18"
                     font-weight="bold"
-                    fill="#F2E7D0"
+                    fill="#1C1813"
                     text-anchor="middle"
                     dominant-baseline="central"
-                    stroke="#1C1813"
-                    stroke-width="6"
-                    paint-order="stroke"
-                    stroke-linejoin="round"
                 >
                     C
                 </text>
             </g>
             <text
-                x="225"
-                y="462"
-                font-family="'TeX Gyre Schola','Century Schoolbook',serif"
-                font-size="15"
-                font-weight="normal"
-                font-style="italic"
+                x="230"
+                y="118"
+                font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
+                font-size="18"
+                font-weight="bold"
                 fill="#F2E7D0"
                 text-anchor="middle"
                 dominant-baseline="central"
+            ></text>
+            <text
+                x="470"
+                y="50"
+                font-family="'Courier New','Liberation Mono',monospace"
+                font-size="16"
+                font-weight="normal"
+                fill="#F2E7D0"
+                text-anchor="start"
+                dominant-baseline="central"
             >
-                o detector encontra o ciclo
+                A: rc 2 · gc 1 → raiz
             </text>
-            <rect x="0" y="0" width="450" height="500" fill="none" stroke="#1C1813" stroke-width="38" />
-            <rect x="11" y="11" width="428" height="478" fill="none" stroke="#F2E7D0" stroke-width="3.5" />
-            <rect x="19" y="19" width="412" height="462" fill="none" stroke="#F2E7D0" stroke-width="1.2" />
+            <text
+                x="470"
+                y="82"
+                font-family="'Courier New','Liberation Mono',monospace"
+                font-size="16"
+                font-weight="normal"
+                fill="#F2E7D0"
+                text-anchor="start"
+                dominant-baseline="central"
+            >
+                B, C: gc 0 → resgatados
+            </text>
+            <text
+                x="470"
+                y="114"
+                font-family="'TeX Gyre Schola','Century Schoolbook',serif"
+                font-size="16"
+                font-weight="normal"
+                font-style="italic"
+                fill="#F2E7D0"
+                text-anchor="start"
+                dominant-baseline="central"
+            >
+                pela busca a partir de A
+            </text>
+            <line x1="770" y1="36" x2="770" y2="150" stroke="#F2E7D0" stroke-width="1.5" stroke-dasharray="3 6" />
+            <path
+                d="M867.2 102.0Q900.0 114.0 930.0 103.0"
+                fill="none"
+                stroke="#A8321F"
+                stroke-width="3.2"
+                marker-end="url(#arx75)"
+                stroke-linecap="round"
+            />
+            <path
+                d="M932.8 82.0Q900.0 70.0 870.0 81.0"
+                fill="none"
+                stroke="#A8321F"
+                stroke-width="3.2"
+                marker-end="url(#arx75)"
+                stroke-linecap="round"
+            />
+            <g opacity="1">
+                <circle
+                    cx="840"
+                    cy="92"
+                    r="26"
+                    fill="#1C1813"
+                    stroke="#A8321F"
+                    stroke-width="3"
+                    stroke-dasharray="6 5"
+                />
+                <text
+                    x="840"
+                    y="93"
+                    font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
+                    font-size="22"
+                    font-weight="bold"
+                    fill="#A8321F"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                >
+                    D
+                </text>
+            </g>
+            <g opacity="1">
+                <circle
+                    cx="960"
+                    cy="92"
+                    r="26"
+                    fill="#1C1813"
+                    stroke="#A8321F"
+                    stroke-width="3"
+                    stroke-dasharray="6 5"
+                />
+                <text
+                    x="960"
+                    y="93"
+                    font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
+                    font-size="22"
+                    font-weight="bold"
+                    fill="#A8321F"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                >
+                    E
+                </text>
+            </g>
+            <text
+                x="1010"
+                y="70"
+                font-family="'Courier New','Liberation Mono',monospace"
+                font-size="16"
+                font-weight="normal"
+                fill="#F2E7D0"
+                text-anchor="start"
+                dominant-baseline="central"
+            >
+                gc 0 e 0
+            </text>
+            <text
+                x="1010"
+                y="104"
+                font-family="'TeX Gyre Bonum','Bookman Old Style',serif"
+                font-size="19"
+                font-weight="bold"
+                fill="#A8321F"
+                text-anchor="start"
+                dominant-baseline="central"
+            >
+                lixo
+            </text>
+            <rect x="0" y="0" width="1210" height="185" fill="none" stroke="#1C1813" stroke-width="38" />
+            <rect x="11" y="11" width="1188" height="163" fill="none" stroke="#F2E7D0" stroke-width="3.5" />
+            <rect x="19" y="19" width="1172" height="147" fill="none" stroke="#F2E7D0" stroke-width="1.2" />
         </svg>
     </figure>
-    <div class="rc papel" style="left: 523.2px; top: 153.6px; width: 698.88px; height: 251.52px"></div>
-    <div
-        class="tx"
-        style="left: 547.2px; top: 168.96px; width: 650.88px; height: 38.4px; color: var(--ink); font-size: 26.4px"
-    >
-        <p>
-            <span class="fonte-titulo negrito">Camada 1 · contagem de referências</span>
-        </p>
-    </div>
-    <div
-        class="tx"
-        style="
-            left: 547.2px;
-            top: 213.12px;
-            width: 650.88px;
-            height: 174.72px;
-            color: var(--ink);
-            font-size: 23.46px;
-            line-height: 1.228;
-        "
-    >
-        <p class="bl" style="margin-bottom: 9.33px">
-            <span class="fonte-corpo">Todo objeto tem o campo </span><span class="fonte-mono">ob_refcnt</span
-            ><span class="fonte-corpo">.</span>
-        </p>
-        <p class="bl" style="margin-bottom: 9.33px">
-            <span class="fonte-mono">Py_INCREF</span><span class="fonte-corpo"> e </span
-            ><span class="fonte-mono">Py_DECREF</span
-            ><span class="fonte-corpo"> a cada referência ganha ou perdida.</span>
-        </p>
-        <p class="bl" style="margin-bottom: 9.33px">
-            <span class="fonte-corpo">Chegou a zero: desalocado na hora, de forma determinística.</span>
-        </p>
-        <p class="bl">
-            <span class="fonte-corpo">Objetos imortais (PEP 683, Python 3.12) nunca mudam o contador.</span>
-        </p>
-    </div>
-    <div class="rc papel" style="left: 523.2px; top: 424.32px; width: 698.88px; height: 209.28px"></div>
-    <div
-        class="tx"
-        style="left: 547.2px; top: 439.68px; width: 650.88px; height: 38.4px; color: var(--ink); font-size: 26.4px"
-    >
-        <p>
-            <span class="fonte-titulo negrito">Camada 2 · detector de ciclos</span>
-        </p>
-    </div>
-    <div
-        class="tx"
-        style="
-            left: 547.2px;
-            top: 483.84px;
-            width: 650.88px;
-            height: 132.48px;
-            color: var(--ink);
-            font-size: 23.46px;
-            line-height: 1.228;
-        "
-    >
-        <p class="bl" style="margin-bottom: 9.33px">
-            <span class="fonte-corpo">Só contêineres entram no grafo: listas, dicts, instâncias.</span>
-        </p>
-        <p class="bl" style="margin-bottom: 9.33px">
-            <span class="fonte-mono">tp_traverse</span
-            ><span class="fonte-corpo"> enumera as arestas de saída de cada objeto.</span>
-        </p>
-        <p class="bl">
-            <span class="fonte-corpo">Roda em três gerações, disparado pelo saldo de alocações.</span>
-        </p>
-    </div>
     <div class="ft">Coleta de lixo sob a ótica dos grafos</div>
     <div class="pg">10</div>
     <aside class="notes">
-        Camada 1: o contador é atualizado em cada INCREF e DECREF e libera na hora. Camada 2: o módulo gc cuida só de
-        contêineres, porque inteiros e strings não conseguem formar ciclos. tp_traverse é a lista de adjacência do
-        grafo.
+        O CPython não conhece as raízes, porque extensões em C guardam ponteiros que o interpretador não enxerga. Então
+        ele deduz: grau de entrada total menos grau de entrada interno é igual ao número de arestas vindas de fora.
+        Ideia de T. W. Christopher (1984). No exemplo, só A recebe uma referência de fora (a variável x); D e E só
+        apontam um para o outro e são lixo.
     </aside>
 </section>

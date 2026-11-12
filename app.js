@@ -1,6 +1,6 @@
 (function () {
     // shortcut: slide count is fixed here; update it when adding/removing files in slides/
-    var N = 21,
+    var N = 14,
         st = document.getElementById("stage");
     Promise.all(
         Array.from({ length: N }, function (_, k) {
